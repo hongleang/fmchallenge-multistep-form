@@ -1,0 +1,13 @@
+.change-plan-link {
+    border: none;
+    background: none;
+    text-decoration: underline;
+    padding: 0;
+    cursor: pointer;
+    user-select: none;
+    opacity: .7;
+}
+
+.change-plan-link:hover{
+    opacity: 1;
+}

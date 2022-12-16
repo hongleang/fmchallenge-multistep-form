@@ -1,0 +1,73 @@
+:root{
+    --switch-width: 45px;
+    --switch-height: 24px;
+    --switch-toggle-height: 18px;
+    --switch-toggle-width: 18px;
+}
+
+.plan-card {
+    cursor: pointer;
+}
+
+.plan-card:hover {
+    opacity: .90;
+}
+
+.plan-description {
+    margin-top: 40px;
+}
+
+.plan-selector {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 35px;
+    border-radius: 8px;
+    background-color: var(--magnolia);
+}
+
+.toggle{
+    margin-left: 20px;
+    margin-right: 20px;
+    /* vertical-align:middle; */
+    cursor: pointer;
+}
+
+.toggle-checkbox {
+    display: none;
+    visibility: hidden;
+    vertical-align:middle;
+    
+}
+
+.toggle-checkbox:checked + .toggle-switch::before{
+    left: 25px;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: var(--switch-width);
+    height: var(--switch-height);
+    background-color: var(--marine-blue);
+    border-radius: 30px;
+    vertical-align:middle;
+}
+
+.toggle-switch::before, .toggle-switch::after{
+    content: "";
+}
+
+.toggle-switch::before {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width:  var( --switch-toggle-width);
+    height: var( --switch-toggle-height);
+    border-radius: 50%;
+    background-color: var(--white);
+    transition: left .2s ease-out;
+}
+

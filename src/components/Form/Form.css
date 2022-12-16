@@ -1,0 +1,13 @@
+@media (max-width: 560px) {
+    .form-wrapper {
+        background-color: var(--alabaster) !important;
+        box-shadow: none !important;
+    }
+
+    .main-content {
+        display: flex;
+        padding: 20px;
+        justify-content: center!important;
+    }
+
+}

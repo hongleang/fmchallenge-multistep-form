@@ -1,0 +1,68 @@
+.add-ons-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.checkbox-wrapper {
+    flex: 0 0 50px;
+    height: 50px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.checkbox {
+    display: none;
+    visibility: hidden;
+    vertical-align:middle;    
+}
+
+.checkmark {
+    position: relative;
+    top: 25%;
+    left: 25%;
+}
+
+.checkmark::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 8px;
+    background-color: #eee;
+}
+
+.checkmark img {
+    display: none;
+    position: relative;
+    top: 25%;
+    left: 3px;
+    width: 18px;
+}
+
+.checkbox:checked+.checkmark::before {
+    background-color: var(--puplish-blue);
+}
+
+.checkbox:checked + .checkmark img {
+    display: inline-block;
+}
+
+/* add-ons-contents */
+.add-ons-contents {
+    flex: 1 0 auto;
+}
+
+.add-ons-contents > * {
+    margin-bottom: 0;
+}
+
+.add-ons-price {
+    color: var(--puplish-blue)!important;
+    opacity: .90;
+    font-weight: 600;
+}

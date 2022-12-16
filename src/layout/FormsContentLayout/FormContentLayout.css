@@ -1,0 +1,9 @@
+@media (max-width: 560px) {
+    .content-layout {
+        background: white;
+        padding: 75px 20px;
+        border-radius: 20px;
+        box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+        transform: translate(0, -120px);
+    }
+}

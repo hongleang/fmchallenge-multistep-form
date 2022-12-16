@@ -1,13 +1,131 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: "Ubuntu Bold";
+  src: local("Ubuntu-Bold"),
+    url("./fonts/Ubuntu-Bold.ttf") format("truetype");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "Ubuntu Medium";
+  src: local("Ubuntu-Medium"),
+    url("./fonts/Ubuntu-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Ubuntu Regular";
+  src: local("Ubuntu-Regular"),
+    url("./fonts/Ubuntu-Regular.ttf") format("truetype");
+}
+
+:root {
+  /* Blue */
+  --marine-blue: rgb(2, 41, 90);
+  --puplish-blue: rgb(71, 61, 255);
+  --pastel-blue: rgb(173, 190, 255);
+  --light-blue: rgb(191, 226, 253);
+  /* Red */
+  --strawberry-red: rgb(237, 53, 72);
+
+  /* White and gray */
+  --cool-gray: rgb(150, 153, 171);
+  --light-gray: rgb(214, 217, 230);
+  --magnolia: rgb(240, 246, 255);
+  --alabaster: rgb(250, 251, 255);
+  --white: hsl(0, 0%, 100%);
+
+  /* gutter for container class */
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+}
+
+body {
+  font-family: "Ubuntu Regular", Helvetica, sans-serif !important;
+  font-weight: 400 !important;
+  background-color: var(--alabaster);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Ubuntu Bold", Helvetica, sans-serif !important;
+  font-weight: 700 !important;
+}
+
+p {
+  font-family: "Ubuntu Regular", Helvetica, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.text-muted {
+  color: var(--cool-gray) !important;
+}
+
+.form-container {
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+}
+
+@media (min-width: 1400px) {
+  .form-container {
+    max-width: 900px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1400px) {
+  .form-container {
+    max-width: 820px !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .form-container {
+    max-width: 580px !important;
+  }
+}
+
+.btn-navigate {
+  --bs-btn-padding-x: 1.3rem;
+  --bs-btn-padding-y: 0.5rem;
+  --bs-btn-color: var(--white);
+  --bs-btn-bg: var(--marine-blue);
+  --bs-btn-border-color: var(--marine-blue);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: rgba(4, 63, 136);
+  --bs-btn-hover-border-color: var(--marine-blue);
+  --bs-btn-focus-shadow-rgb: 130, 138, 145;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--marine-blue);;
+  --bs-btn-active-border-color: var(--marine-blue);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(2, 41, 90, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: var(--puplish-blue);
+  --bs-btn-disabled-border-color: var(--puplish-blue);
+}
+
+.active-selection {
+  --bs-card-bg: var(--alabaster)!important;
+  --bs-card-border-color: var(--puplish-blue)!important;    
+}
+
+.text-marine-blue {
+  color: var(--marine-blue) !important;
+}
+
+.text-purple-blue {
+  color: var(--puplish-blue) !important;
 }

@@ -1,0 +1,48 @@
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.sole-button {
+    justify-content: end;
+}
+
+.nav-btn {
+    opacity: .7;
+    margin-bottom: 0;
+    color: var(--cool-gray);
+    text-decoration: none;
+    transition: opacity, color .4s ease-out;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.nav-btn:hover {
+    color: black;
+    opacity: 1;
+}
+
+
+.final-step {
+    --bs-btn-color: var(--white)!important;
+    --bs-btn-bg: var(--puplish-blue)!important;
+    --bs-btn-border-color: var(--puplish-blue)!important;
+    --bs-btn-hover-bg: rgba(71, 61, 255, .9) !important;
+    --bs-btn-hover-border-color: var(--puplish-blue);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--puplish-blue);;
+    --bs-btn-active-border-color: rgba(71, 61, 255, .7)
+    --bs-btn-disabled-bg: rgba(71, 61, 255, .7)
+    --bs-btn-disabled-border-color: rgba(71, 61, 255, .7)
+  }
+
+@media (min-width: 760px) {
+    .navigation-buttons {
+        position: absolute;
+        bottom: 0;
+    }
+}
