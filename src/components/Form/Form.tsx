@@ -15,7 +15,7 @@ export default function Form() {
     }, [location, navigate])
 
     return (
-        <div className="vw-100 vh-100 d-flex justify-content-center align-items-center">
+        <div className="vw-100 vh-100 d-flex justify-content-center align-items-sm-center">
             <div className="form-container">
                 <div className="form-wrapper row gx-5 justify-content-around rounded-3 bg-white p-sm-3 shadow ">
                     <Sidebar />
