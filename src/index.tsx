@@ -5,8 +5,6 @@ import './index.css';
 import "./fonts/Ubuntu-Bold.ttf"
 import "./fonts/Ubuntu-Regular.ttf"
 import "./fonts/Ubuntu-Medium.ttf"
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
 import { browserRouter } from './utils/navigations.utils';
 
@@ -31,5 +29,3 @@ root.render(
     </Provider>
   </React.StrictMode>
 );
-
-reportWebVitals();
