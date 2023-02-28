@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { PlansRootState } from '../../../models/planSelectionForm/PlanState';
 
 const initialState =
 {
