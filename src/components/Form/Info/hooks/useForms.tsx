@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { update } from "../../../../store/features/forms/infoReducer";
 
-import { FormData, InfoRootState } from "../../../../models/InfoForm/InfoState";
+import { FormData, FormErrors, InfoRootState } from "../../../../models/InfoForm/InfoState";
 
 import steps from "../../../../utils/step-naviation";
 
@@ -18,32 +18,42 @@ export function useForm() {
 
     const navigate = useNavigate();
 
-    function generateFormError({ name, email, phone }: { name: string, email: string, phone: string }) {
-        let errors = {};
-        const obj = { name, email, phone };
-        Object.entries(obj).forEach(([key, val]) => {
-            if (val === '') {
-                errors = {
-                    ...errors,
-                    [key]: 'This field is not valid'
-                }
-            }
-        });
+    function getErrorMessage(str: string) {
+        return str.length > 0 ? "" : "This field is not valid."
+    }
+
+    function generateFormError({ name, email, phone }: { name: string, email: string, phone: string }): FormErrors {
+        let errors: FormErrors = {
+            nameError: getErrorMessage(name),
+            emailError: getErrorMessage(email),
+            phoneError: getErrorMessage(phone)
+        };
         return errors;
     }
 
     function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
-        setFormData({ ...formData, formErrors: {} });
-        const { name, email, phone } = formData;
-        const formErrors = generateFormError({ name, email, phone })
 
-        setFormData({ ...formData, formErrors });
-        if (Object.keys(formErrors).length === 0) {            
-            dispatch(update(formData));
-            handleNavigation()
-        }
+        const { name, email, phone } = formData;
+        const formErrors: FormErrors = generateFormError({ name, email, phone })
+        setFormData({ ...formData, formErrors })
+        const valid = (Object.keys(formErrors) as Array<keyof typeof formErrors>).every(key => {
+            return formErrors[key] === "";
+        });
+
+        if (!valid) return;
+        
+        dispatch(update({
+            ...formData, formErrors: {
+                nameError: "",
+                emailError: "",
+                phoneError: ""
+            }
+        }));
+        handleNavigation()
     }
+    console.log({ info });
+
 
     function handleNavigation() {
         const state: { name: string, to: string, back: string | null, nextStep: string | null } | undefined = steps.find(step => step.name === 'step-1');

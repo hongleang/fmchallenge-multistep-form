@@ -6,7 +6,11 @@ const initialState =
     name: '',
     email: '',
     phone: '',
-    formErrors: {}
+    formErrors: {
+        nameError: "",
+        emailError: "",
+        phoneError: ""
+    }
 }
 
 export const infoSlice = createSlice({

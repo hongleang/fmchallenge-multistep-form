@@ -6,9 +6,9 @@ export type FormData = {
 }
 
 export type FormErrors = {
-    nameError?: string;
-    phoneError?: string;
-    emailError?: string;
+    nameError: string;
+    phoneError: string;
+    emailError: string;
 }
 
 export type InfoRootState = {
@@ -24,5 +24,5 @@ export type UpdateState = {
     name?: string;
     phone?: string;
     email?: string;
-    formErrors?: FormErrors
+    formErrors: FormErrors
 }
