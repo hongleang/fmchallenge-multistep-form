@@ -129,3 +129,7 @@ li {
 .text-purple-blue {
   color: var(--puplish-blue) !important;
 }
+
+.fw-md {
+  font-weight: 500!important;
+}

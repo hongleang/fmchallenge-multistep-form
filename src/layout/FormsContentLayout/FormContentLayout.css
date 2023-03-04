@@ -7,3 +7,7 @@
         transform: translate(0, -120px);
     }
 }
+
+.content-layout {
+    padding-top: 30px;
+}
