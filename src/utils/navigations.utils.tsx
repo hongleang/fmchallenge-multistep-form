@@ -24,7 +24,7 @@ const navigationRoute: RouteObject[] = navigations.map(({ path, element }) => ({
 
 const browserRouter: RouteObject[] = [
     {
-        path: "/",
+        path: "*",
         element: <App />,
         errorElement: <ErrorPage />,
     },
